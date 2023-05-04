@@ -1,5 +1,5 @@
-from telegram import Updater
-from telegram.ext import *
+import telegram
+from telegram.ext import Updater
 
 from functions import *
 
