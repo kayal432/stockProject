@@ -1,4 +1,7 @@
 from telegram.ext import Updater, CommandHandler
+import requests
+
+
 from functions import *
 
 
