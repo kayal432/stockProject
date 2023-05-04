@@ -1,4 +1,4 @@
-from telegram import *
+from telegram import Updater
 from telegram.ext import *
 
 from functions import *
