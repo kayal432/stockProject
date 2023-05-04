@@ -9,7 +9,7 @@ def start(update,context):
     bot.sendMessage(chat_id=chat_id,text='hoii')
 
 def main():
-    updater = Updater(bot_token, use_context=True)
+    updater = Updater(token=bot_token, use_context=True)
 
     dp=updater.dispatcher
     dp.add_handler(CommandHandler('start',start))
