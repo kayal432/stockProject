@@ -24,7 +24,8 @@ def start(update,context):
 #help command    
 def help(update,context):
    update.message.reply_text("hiii,how can i help you")
-
+def portfolio(update,context):
+   update.message.reply_text("hiii,how can i help you")
 # your fallback handler code here
 
 def fallback(update: Updater, context):
@@ -60,6 +61,7 @@ def main():
     dp.add_handler(CommandHandler('start',start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
+    dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
     dp.add_handler(MessageHandler(Filters.command, fallback))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message))
     updater.start_polling()
