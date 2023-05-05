@@ -57,7 +57,7 @@ def command(update,context):
 def cancel(update, context):
     message = update.message
     chat_id = message.chat_id
-    reply_keyboard = [["Show Portfolio"]]
+    reply_keyboard = [["cancel"]]
     bot.sendMessage(chat_id=chat_id, text="Use menu buttons for quick access",
                     reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True),
                     reply_to_message_id=update.message.message_id)   
