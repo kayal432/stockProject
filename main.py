@@ -70,7 +70,7 @@ def main():
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
     dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
-     dp.add_handler(MessageHandler(Filters.regex('Cancel$'),cancel))
+    dp.add_handler(MessageHandler(Filters.regex('Cancel$'),cancel))
     dp.add_handler(MessageHandler(Filters.command, fallback))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message))
     updater.start_polling()
