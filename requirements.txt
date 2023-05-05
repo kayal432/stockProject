@@ -1,2 +1,2 @@
 python-telegram-bot
-
+firebase-admin==5.1.0
