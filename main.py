@@ -1,5 +1,6 @@
 
 from functions import *
+from basic import *
 
 #start command
 def start(update,context):
@@ -37,9 +38,9 @@ def message(update,context):
     message = update.message
     chat_id = message.chat_id
     text = message.text
-    if text == 'hi':
+    if text == 'add_item':
         #my_function(update, context)
-        bot.send_message(chat_id=chat_id, text='bye')
+        add_item()
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that  "+text)
     #bot.send_message(chat_id=chat_id, text=text)
