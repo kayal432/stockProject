@@ -12,10 +12,7 @@ def start(update,context):
     bot.sendMessage(chat_id=chat_id,text='hoii')
     
 def hii(update,context):
-    message=update.message
-    chat_id=message.chat_id
-    text=message.text
-    bot.sendMessage(chat_id=chat_id,text='bye')
+   update.message.reply_text("hiiiiii")
  
 
 def main():
