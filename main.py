@@ -8,6 +8,13 @@ def start(update,context):
     username=message.from_user.username
     text=message.text
     bot.send_message(chat_id=chat_id, text=f"Hi {username}")
+    get = db.reference(f"peoples").get() or {}
+    if chat_id not in get:
+        db.reference(f"peoples/{chat_id}").set({
+           'chat_id':chat_id,
+            'username':username
+        })
+        bot.send_message(chat_id=chat_id, text=f"Hello new user {username}")
 #help command    
 def help(update,context):
    update.message.reply_text("hiii,how can i help you")
