@@ -26,7 +26,7 @@ def message(update,context):
     text = message.text
     bot.send_message(chat_id=chat_id, text=text)
  
-def command:
+def command(update,context):
     message = update.message
     chat_id = message.chat_id
     text = message.text
