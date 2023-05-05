@@ -24,8 +24,7 @@ def start(update,context):
 #help command    
 def help(update,context):
    update.message.reply_text("hiii,how can i help you")
-def portfolio(update,context):
-   update.message.reply_text("hiii,how can i help you")
+
 # your fallback handler code here
 
 def fallback(update: Updater, context):
