@@ -20,18 +20,22 @@ def fallback(update: Updater, context):
     bot.send_message(chat_id=chat_id, text="I'm sorry, I didn't understand that command.")
     
    
-def command(update,context):
+def message(update,context):
+    message = update.message
+    chat_id = message.chat_id
+    text = message.text
+    bot.send_message(chat_id=chat_id, text=text)
+ 
+def command:
     message = update.message
     chat_id = message.chat_id
     text = message.text
     comm="""/hii
         /help
         """
-    
     bot.send_message(chat_id=chat_id, text=comm)
- 
-        
-
+    
+    
 def main():
     updater = Updater(token=bot_token, use_context=True)
 
