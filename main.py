@@ -28,7 +28,7 @@ def main():
     dp=updater.dispatcher
     dp.add_handler(CommandHandler('start',start))
     dp.add_handler(CommandHandler('help',help))
-    dp.add_handler(MessageHandler(filter.command, fallback))
+    dp.add_handler(MessageHandler(filters.command, fallback))
     updater.idle()
     updater.start_polling()
 
