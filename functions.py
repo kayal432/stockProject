@@ -3,6 +3,8 @@
 # from telegram.ext import Updater
 # import telegram
 # from telegram.ext import Updater, CommandHandler, MessageHandler
+
+import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler
 from telegram import Bot
 from telegram.ext.filters import Filters
