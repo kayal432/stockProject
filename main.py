@@ -15,6 +15,11 @@ def start(update,context):
             'username':username
         })
         bot.send_message(chat_id=chat_id, text=f"Hello new user {username}")
+     else:
+        reply_keyboard = [["Settings", "My task"]]
+    bot.sendMessage(chat_id=chat_id, text="Choose options",
+                    reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True),
+                    reply_to_message_id=update.message.message_id)
 #help command    
 def help(update,context):
    update.message.reply_text("hiii,how can i help you")
