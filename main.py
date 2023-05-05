@@ -15,7 +15,7 @@ def start(update,context):
             'username':username
         })
         bot.send_message(chat_id=chat_id, text=f"Hello new user {username}")
-     else:
+    else:
         reply_keyboard = [["Settings", "My task"]]
     bot.sendMessage(chat_id=chat_id, text="Choose options",
                     reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True),
