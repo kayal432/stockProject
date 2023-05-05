@@ -11,8 +11,8 @@ def start(update,context):
     text=message.text
     bot.sendMessage(chat_id=chat_id,text='hoii')
     
-def hii(update,context):
-   update.message.reply_text("hiiiiii")
+def help(update,context):
+   update.message.reply_text("hiii,how can i help you")
  
 
 def main():
@@ -20,7 +20,7 @@ def main():
 
     dp=updater.dispatcher
     dp.add_handler(CommandHandler('start',start))
-    dp.add_handler(CommandHandler('hii',hii))
+    dp.add_handler(CommandHandler('help',help))
     updater.start_polling()
 
 main()
