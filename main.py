@@ -38,7 +38,7 @@ def message(update,context):
     message = update.message
     chat_id = message.chat_id
     text = message.text
-    if text == 'add_item':
+    if 'add_item' in text:
         #my_function(update, context)
         add_item()
     else:
