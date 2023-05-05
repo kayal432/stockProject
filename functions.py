@@ -11,6 +11,11 @@ from telegram.ext import Updater, CommandHandler, MessageHandler
 from telegram import Bot
 from telegram.ext.filters import Filters
 
+cred = credentials.Certificate("stockproject-29f5e-firebase-adminsdk-evs2d-7fa10d62ef.json")
+firebase_admin.initialize_app(cred, {
+    "databaseURL": "https://stockproject-29f5e-default-rtdb.firebaseio.com/"
+})
+
 
 bot_token='6061292744:AAEEurmseHxL4nzKnCr4nQzKHyH16kmq24Y'
 
