@@ -23,7 +23,7 @@ def fallback(update: Updater, context):
     bot.send_message(chat_id=chat_id, text="I'm sorry, I didn't understand that command.")
     
    
- def message(update,context):
+def message(update,context):
     message = update.message
     chat_id = message.chat_id
     text = message.text
