@@ -42,7 +42,7 @@ def message(update,context):
         bot.send_message(chat_id=chat_id, text='bye')
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that command")
-    bot.send_message(chat_id=chat_id, text=text)
+    #bot.send_message(chat_id=chat_id, text=text)
  
 def command(update,context):
     message = update.message
