@@ -30,7 +30,7 @@ def fallback(update: Updater, context):
     message = update.message
     text = message.text
     chat_id = message.chat_id
-    bot.send_message(chat_id=chat_id, text="I'm sorry, I didn't understand that command.")
+    bot.send_message(chat_id=chat_id, text="I'm sorry, I didn't understand that "+text)
     
    
 def message(update,context):
