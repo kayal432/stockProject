@@ -9,7 +9,7 @@ def start(update,context):
     text=message.text
     bot.send_message(chat_id=chat_id, text=f"Hi {username}")
     get = db.reference(f"peoples/{chat_id}").get() or {}
-    if chat_id not in get:
+    if len(get)<=0:
         db.reference(f"peoples/{chat_id}").set({
            'chat_id':chat_id,
             'username':username
