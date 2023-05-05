@@ -41,7 +41,7 @@ def message(update,context):
         #my_function(update, context)
         bot.send_message(chat_id=chat_id, text='bye')
     else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that command")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that  "+text)
     #bot.send_message(chat_id=chat_id, text=text)
  
 def command(update,context):
