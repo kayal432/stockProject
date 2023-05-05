@@ -3,8 +3,10 @@
 # from telegram.ext import Updater
 # import telegram
 # from telegram.ext import Updater, CommandHandler, MessageHandler
-
+import firebase_admin
 import requests
+
+from firebase_admin import credentials, db
 from telegram.ext import Updater, CommandHandler, MessageHandler
 from telegram import Bot
 from telegram.ext.filters import Filters
