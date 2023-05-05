@@ -17,7 +17,7 @@ def help(update,context):
 
 def fallback(update: Update, context):
     # your fallback handler code here
-    message = update.message
+    message = updater.message
     text = message.text
     chat_id = message.chat_id
     bot.send_message(chat_id=chat_id, text="I'm sorry, I didn't understand that command.")
