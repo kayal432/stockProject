@@ -60,6 +60,15 @@ def command(update,context):
     comm="""/hii\n/help"""
     bot.send_message(chat_id=chat_id, text=comm)
     
+    
+def start(update,context):
+    message=update.message
+    chat_id=message.chat_id
+    username=message.from_user.username
+    text=message.text
+    bot.send_message(chat_id=chat_id, text=f"Hi {username}")
+    
+    
 def main():
     updater = Updater(token=bot_token, use_context=True)
 
