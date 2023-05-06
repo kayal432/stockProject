@@ -73,7 +73,7 @@ def main():
     updater = Updater(token=bot_token, use_context=True)
 
     dp=updater.dispatcher
-    dp.add_handler(CommandHandler(['Cancel','start'],start))
+    dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
     dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
