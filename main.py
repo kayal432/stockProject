@@ -72,7 +72,7 @@ def main():
    
 
     basic = ConversationHandler(
-        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_date)],
+        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_dat)],
         states={
             add_item: [MessageHandler(Filters.text,add_item )],
             update_item: [MessageHandler(Filters.text,update_item)],
