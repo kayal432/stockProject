@@ -7,6 +7,7 @@ ADD_ITEM, REMOVE_ITEM, UPDATE_ITEM = range(3)
 def basic(update, context):
     user = update.message.from_user
     update.message.reply_text(f"Hi {user.first_name}! What would you like to do today?", reply_markup=ReplyKeyboardMarkup([['Add item'], ['Remove item'], ['Update item']], one_time_keyboard=True))
+    bot.send_message(chat_id=chat_id, text=f"Hi {username}")
     return ADD_ITEM
 
 def add_item(update, context):
