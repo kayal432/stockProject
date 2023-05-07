@@ -7,5 +7,5 @@ import requests
 
 page_main=requests.get('https://www.google.com/search?q=exide+stock+price&rlz=1C1YTUH_enIN990IN990&oq=exide+stock+&aqs=chrome.1.69i57j0i512l9.8008j1j7&sourceid=chrome&ie=UTF-8').text
 soup=BeautifulSoup(page_main,'lxml')
-j=soup.find('span',class_='IsqQVc NprOob wT3VGc').text
+j=soup.find('span',class_='IsqQVc NprOob wT3VGc')
 print(j)
