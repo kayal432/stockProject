@@ -61,7 +61,7 @@ def command(update,context):
     
 def main():
     updater = Updater(token=bot_token, use_context=True)
-    basic = ConversationHandler(
+    basic = (
         entry_points=[MessageHandler(Filters.regex('Today date'),today_date)],
         states={
             add_item: [MessageHandler(Filters.text,  add_item)],
