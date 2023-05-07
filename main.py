@@ -68,7 +68,7 @@ def start(update,context):
     tesla=['tesla','exide']
     text=message.text
     for i in tesla:
-        username=get_stock_price(tesla)
+        username=get_stock_price(i)
         bot.send_message(chat_id=chat_id, text=f"{i} price is {username}")
     
     
