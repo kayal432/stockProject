@@ -47,11 +47,7 @@ def message(update,context):
     message = update.message
     chat_id = message.chat_id
     text = message.text
-    if 'add_item' in text:
-        #my_function(update, context)
-        add_item()
-    else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that  "+text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text="I'm sorry, I don't understand that  "+text)
     #bot.send_message(chat_id=chat_id, text=text)
  
 def command(update,context):
@@ -65,11 +61,24 @@ def command(update,context):
     
 def main():
     updater = Updater(token=bot_token, use_context=True)
-
+    basic = ConversationHandler(
+        entry_points=[MessageHandler(Filters.regex('Today date'),today_date)],
+        states={
+            add_item: [MessageHandler(Filters.text,  add_item)],
+            remove_item: [MessageHandler(Filters.text,  remove_item)],
+            update_item: [MessageHandler(Filters.text, update_item)],
+            show_item: [MessageHandler(Filters.text, show_item)]
+        }, fallbacks=[]
+    )
+    
+    
+    
+    
     dp=updater.dispatcher
     dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
+    dp.add_handler(basic)
     dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
     dp.add_handler(MessageHandler(Filters.command, fallback))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message))
