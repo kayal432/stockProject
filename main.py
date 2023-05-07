@@ -61,20 +61,32 @@ def command(update,context):
     
 def main():
     updater = Updater(token=bot_token, use_context=True)
-    basic = (
-        entry_points=[MessageHandler(Filters.regex('Today date'),today_date)],
+    dp = updater.dispatcher
+    create = ConversationHandler(
+        entry_points=[CommandHandler('create_task', create_task)],
         states={
-            add_item: [MessageHandler(Filters.text,  add_item)],
-            remove_item: [MessageHandler(Filters.text,  remove_item)],
-            update_item: [MessageHandler(Filters.text, update_item)],
-            show_item: [MessageHandler(Filters.text, show_item)]
+            TITLE: [MessageHandler(Filters.text, title)],
+            CHAT_ID: [MessageHandler(Filters.text, chat_id)],
         }, fallbacks=[]
     )
-    
-    
-    
-    
-    dp=updater.dispatcher
+   
+
+    basic = ConversationHandler(
+        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_date)],
+        states={
+            add_item: [MessageHandler(Filters.text,add_item )],
+            update_item: [MessageHandler(Filters.text,update_item)],
+            remove_item: [MessageHandler(Filters.text,remove_item)],
+        }, fallbacks=[]
+    )
+
+   
+#     dp.add_handler(edit_task_con)
+#     dp.add_handler(upi)
+#     dp.add_handler(create)
+#     dp.add_handler(binance)
+#     dp.add_handler(discord)
+    dp.add_handler(twitter_settings)
     dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
