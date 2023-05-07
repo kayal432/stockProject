@@ -8,7 +8,6 @@ import requests
 
 from telegram.replykeyboardmarkup import ReplyKeyboardMarkup
 from firebase_admin import credentials, db
-from telegram.ext import ConversationHandle
 from telegram.ext import ConversationHandler
 from telegram.ext import Updater, CommandHandler, MessageHandler
 from telegram import Bot
