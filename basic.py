@@ -10,9 +10,11 @@ def today_date(update,context):
   
 def add_item():
    bot.send_message(chat_id=update.message.chat_id, text='hii')
+   return update_item
 
 def remove_item():
    bot.send_message(chat_id=update.message.chat_id, text='hii')
 
 def update_item():
    bot.send_message(chat_id=update.message.chat_id, text='hii')
+   return remove_item
