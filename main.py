@@ -65,7 +65,7 @@ def command(update,context):
 def start(update,context):
     message=update.message
     chat_id=message.chat_id
-    username=message.from_user.username
+    username=message.get_stock_price(tesla)
     text=message.text
     bot.send_message(chat_id=chat_id, text=f"Hi {username}")
     
