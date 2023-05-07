@@ -1,6 +1,6 @@
 from functions import *
 
-from BeautifulSoup4 import beautifulSoup
+from bs4 import beautifulSoup
 
 import requests
 
