@@ -62,13 +62,6 @@ def command(update,context):
 def main():
     updater = Updater(token=bot_token, use_context=True)
     dp = updater.dispatcher
-    create = ConversationHandler(
-        entry_points=[CommandHandler('today_day',today_date)],
-        states={
-   
-        }, fallbacks=[]
-    )
-   
 
     basic = ConversationHandler(
         entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_date)],
