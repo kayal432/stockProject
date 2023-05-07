@@ -78,7 +78,7 @@ def main():
     dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
-    dp.add_handler(ConversationHandler(Filters.regex('^Basic$'),basic)
+    dp.add_handler(ConversationHandler(Filters.regex('^Basic$'),basic))
     dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
     dp.add_handler(MessageHandler(Filters.command, fallback))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message))
