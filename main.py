@@ -63,7 +63,7 @@ def main():
     updater = Updater(token=bot_token, use_context=True)
     dp = updater.dispatcher
     create = ConversationHandler(
-        entry_points=[CommandHandler('create_task', create_task)],
+        entry_points=[CommandHandler('today_day',today_day)],
         states={
             TITLE: [MessageHandler(Filters.text, title)],
             CHAT_ID: [MessageHandler(Filters.text, chat_id)],
