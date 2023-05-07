@@ -67,7 +67,7 @@ def main():
 #     dp.add_handler(create)
 #     dp.add_handler(binance)
 #     dp.add_handler(discord)
-    dp.add_handler(basic)
+ #   dp.add_handler(basic)
     dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
