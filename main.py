@@ -63,7 +63,7 @@ def main():
     updater = Updater(token=bot_token, use_context=True)
     dp = updater.dispatcher
     create = ConversationHandler(
-        entry_points=[CommandHandler('today_day',today_day)],
+        entry_points=[CommandHandler('today_day',today_date)],
         states={
             TITLE: [MessageHandler(Filters.text, title)],
             CHAT_ID: [MessageHandler(Filters.text, chat_id)],
@@ -72,7 +72,7 @@ def main():
    
 
     basic = ConversationHandler(
-        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_dat)],
+        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_date)],
         states={
             add_item: [MessageHandler(Filters.text,add_item )],
             update_item: [MessageHandler(Filters.text,update_item)],
