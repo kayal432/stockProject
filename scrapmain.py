@@ -20,5 +20,5 @@ def get_stock_price(company):
     return stock_price
 
 # Example usage
-stock_price = get_stock_price("Tesla")
-print(stock_price)
+#stock_price = get_stock_price("Tesla")
+return stock_price
