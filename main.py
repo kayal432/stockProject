@@ -69,16 +69,15 @@ def cancel(update,context):
 def main():
     updater = Updater(token=bot_token, use_context=True)
     dp = updater.dispatcher
-
-    basic = ConversationHandler(
-        entry_points=[MessageHandler(Filters.regex('Date of The Day'),today_date)],
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler('basic', basic)],
         states={
-            add_item: [MessageHandler(Filters.text,add_item )],
-            update_item: [MessageHandler(Filters.text,update_item)],
-            remove_item: [MessageHandler(Filters.text,remove_item)],
-        }, fallbacks=[MessageHandler(Filters.regex('^Cancel$'), cancel)]
+            ADD_ITEM: [MessageHandler(Filters.regex('^Add item$'), add_item)],
+            REMOVE_ITEM: [MessageHandler(Filters.regex('^Remove item$'), remove_item)],
+            UPDATE_ITEM: [MessageHandler(Filters.regex('^Update item$'), update_item)],
+        },
+        fallbacks=[CommandHandler('cancel', cancel)]
     )
-
    
 #     dp.add_handler(edit_task_con)
 #     dp.add_handler(upi)
