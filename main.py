@@ -60,16 +60,7 @@ def command(update,context):
     text = message.text
     comm="""/hii\n/help"""
     bot.send_message(chat_id=chat_id, text=comm)
-    
-    
-def start(update,context):
-    message=update.message
-    chat_id=message.chat_id
-    tesla=['tesla','exide']
-    text=message.text
-    for i in tesla:
-        username=get_stock_price(i)
-        bot.send_message(chat_id=chat_id, text=f"{i} price is {username}")
+
     
     
 def main():
