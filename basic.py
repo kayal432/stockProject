@@ -1,4 +1,8 @@
 from functions import *
 
-add_item,update_item,remove_item = range(3)
+add_item,update_item,remove_item,show_item = range(4)
 
+def today_date(update,context):
+  now = datetime.now()
+  date_str = now.strftime("%Y-%m-%d") # format the date as YYYY-MM-DD
+  bot.send_message(chat_id=update.message.chat_id, text=f"The current date is {date_str}")
