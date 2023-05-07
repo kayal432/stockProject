@@ -69,7 +69,7 @@ def main():
             add_item: [MessageHandler(Filters.text,add_item )],
             update_item: [MessageHandler(Filters.text,update_item)],
             remove_item: [MessageHandler(Filters.text,remove_item)],
-        }, fallbacks=[MessageHandler(Filters.regex('^Cancel$'), cancel)]]
+        }, fallbacks=[MessageHandler(Filters.regex('^Cancel$'), cancel)]
     )
 
    
