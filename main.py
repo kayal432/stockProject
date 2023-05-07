@@ -64,7 +64,6 @@ def command(update,context):
     
 def start(update,context):
     message=update.message
-    scrap()
     chat_id=message.chat_id
     username=message.from_user.username
     text=message.text
