@@ -25,16 +25,6 @@ def start(update,context):
 #help command    
 def help(update,context):
    update.message.reply_text("hiii,how can i help you")
-def portfolio(update,context):
-    message=update.message
-    chat_id=message.chat_id
-    username=message.from_user.username
-    text=message.text
-    reply_keyboard = [["Basic","Cancel"]]
-    bot.sendMessage(chat_id=chat_id, text="Choose options",
-                    reply_markup=ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True, one_time_keyboard=True),
-                    reply_to_message_id=update.message.message_id)
-# your fallback handler code here
 
 def fallback(update: Updater, context):
     message = update.message
@@ -57,13 +47,6 @@ def command(update,context):
     comm="""/hii\n/help"""
     bot.send_message(chat_id=chat_id, text=comm)
     
-def cancel(update,context):
-    message = update.message
-    chat_id = message.chat_id
-    text = message.text
-    comm=text
-    bot.send_message(chat_id=chat_id, text=comm)
-
     
     
 def main():
@@ -88,7 +71,7 @@ def main():
     dp.add_handler(CommandHandler(['cancel','start'],start))
     dp.add_handler(CommandHandler('help',help))
     dp.add_handler(CommandHandler('get_command',command))
-    dp.add_handler(ConversationHandler(Filters.regex('^Basic$'),basic))
+    dp.add_handler(conv_handler)
     dp.add_handler(MessageHandler(Filters.regex('^Show Portfolio$'),portfolio))
     dp.add_handler(MessageHandler(Filters.command, fallback))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, message))
