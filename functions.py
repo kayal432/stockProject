@@ -6,6 +6,13 @@
 import firebase_admin
 import requests
 
+from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from telegram.ext import (
+    CallbackContext,
+    ConversationHandler,
+    MessageHandler,
+    Filters,
+)
 from telegram.replykeyboardmarkup import ReplyKeyboardMarkup
 from firebase_admin import credentials, db
 from telegram.ext import ConversationHandler
