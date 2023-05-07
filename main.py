@@ -56,6 +56,13 @@ def command(update,context):
     text = message.text
     comm="""/hii\n/help"""
     bot.send_message(chat_id=chat_id, text=comm)
+    
+def cancel(update,context):
+    message = update.message
+    chat_id = message.chat_id
+    text = message.text
+    comm=text
+    bot.send_message(chat_id=chat_id, text=comm)
 
     
     
