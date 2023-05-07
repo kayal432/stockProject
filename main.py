@@ -65,7 +65,7 @@ def main():
     create = ConversationHandler(
         entry_points=[CommandHandler('today_day',today_date)],
         states={
-            CHAT_ID: [MessageHandler(Filters.text, chat_id)],
+   
         }, fallbacks=[]
     )
    
